@@ -1,32 +1,31 @@
 const mongoose = require('mongoose');
 
 const finalGradeSchema = new mongoose.Schema({
-  studentId: {
+  courseId:{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', //reference student users
-    required: [true, 'Student ID is required']
+    ref: 'Course'
   },
-  courseId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Course',
-    required: [true, 'Course ID is required']
-  },
-  finalPercentage: {
-    type: Number,
-    required: [true, 'Final Percentage is required'],
-    min: 0,
-    max: 100
-  },
-  assignedGrade: {
-    type: String,
-    required: [true, 'Assigned Grade is required'],
-    trim: true
-  }
-}, {
-  timestamps: true
-});
 
-//prevents multiple grades
-finalGradeSchema.index({ studentId: 1, courseId: 1 }, { unique: true });
+  branch:{
+    type: String,
+    enum: ['BMS', 'BEE', 'IMT', 'IMG'] // better than referring over here, we don't need that much overhead
+  },
+
+  grades:{
+    type: Map,
+    of: new mongoose.Schema({
+      rollNumber: Number,
+      percentage:{
+        type: Number,
+        min: 0,
+        max: 100
+      },
+      grade: {
+        type: String,
+        trim: true
+      }
+    })
+  }
+}, {timestamps: true});
 
 module.exports = mongoose.model('FinalGrade', finalGradeSchema);
