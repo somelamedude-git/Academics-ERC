@@ -1,5 +1,6 @@
 
 import Navbar from '../components/Navbar.jsx';
+import Footer from "../components/Footer.jsx";
 import '../Styles/Home.css'; 
 
 const Home = () => {
@@ -88,6 +89,7 @@ const Home = () => {
 
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

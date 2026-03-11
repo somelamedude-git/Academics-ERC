@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 import "../Styles/Assignment.css";
 
 const STATUS_ORDER = ["Pending", "In Progress", "Submitted", "Overdue"];
@@ -181,6 +182,7 @@ const Assignment = () => {
           )}
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

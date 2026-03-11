@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 import "../Styles/Timetable.css";
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -265,6 +266,7 @@ const Timetable = () => {
           </>
         )}
       </main>
+      <Footer />
     </div>
   );
 };

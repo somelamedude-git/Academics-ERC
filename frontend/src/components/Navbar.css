@@ -3,8 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 30px;
-  background-color: #1e293b;
-  color: white;
+  background: linear-gradient(90deg, #1f2329 0%, #2b3038 100%);
+  color: #eceff4;
+  border-bottom: 1px solid #3a4049;
 }
 
 .logo {
@@ -20,14 +21,14 @@
 
 .nav-links li a {
   text-decoration: none;
-  color: white;
+  color: #e5e7eb;
   font-size: 15px;
 }
 
 .nav-links li a:hover {
-  color: #38bdf8;
+  color: #cbd5e1;
 }
 
 .logout {
-  color: #f87171;
+  color: #fda4af;
 }
